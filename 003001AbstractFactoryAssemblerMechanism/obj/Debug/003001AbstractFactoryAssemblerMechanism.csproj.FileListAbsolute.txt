@@ -1,0 +1,1 @@
+D:\MY_PROJECT\DESIGNPATTERN\CSHARPDESIGNPATTERN\CSHARPDESIGN20151005\003001AbstractFactoryAssemblerMechanism\bin\Debug\003001AbstractFactoryAssemblerMechanism.exe.config
