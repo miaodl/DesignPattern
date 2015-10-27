@@ -1,0 +1,1 @@
+D:\MY_PROJECT\DESIGNPATTERN\CSHARPDESIGNPATTERN\CSHARPDESIGN20151005\00501PrototypeXMLBinarySerializeGenericCollection\bin\Debug\00501PrototypeXMLBinarySerializeGenericCollection.exe.config

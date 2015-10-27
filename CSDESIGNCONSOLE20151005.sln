@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00402BuilderAbilityLoadingA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00403BuilderPipelineWithIterator", "00403BuilderPipelineWithIterator\00403BuilderPipelineWithIterator.csproj", "{B6A972AB-6F20-4616-B1B2-3CFB33CCCA0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00500PrototypePattern", "00500PrototypePattern\00500PrototypePattern.csproj", "{68F276C0-D550-4960-87ED-E9DCF90E2689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{B6A972AB-6F20-4616-B1B2-3CFB33CCCA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6A972AB-6F20-4616-B1B2-3CFB33CCCA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6A972AB-6F20-4616-B1B2-3CFB33CCCA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F276C0-D550-4960-87ED-E9DCF90E2689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F276C0-D550-4960-87ED-E9DCF90E2689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F276C0-D550-4960-87ED-E9DCF90E2689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F276C0-D550-4960-87ED-E9DCF90E2689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
