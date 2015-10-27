@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>494cbb27-1d20-4ba6-9c3b-3cbe22d7a3ac</ProjectGuid>
+    <ProjectGuid>{B86E03A0-448E-457A-8D60-8DB65E997FA9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_00501PrototypeXMLBinarySerializeGenericCollection</RootNamespace>
