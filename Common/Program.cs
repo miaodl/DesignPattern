@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Web;
 
 namespace PracticalPattern.CommonTools
 {
@@ -344,6 +345,150 @@ namespace PracticalPattern.CommonTools
 
 
 
+
+
+    //**********************************************
+
+    //windows程序中，如果上下文需要提供实际执行单元内部的共享，需要把它放置于每个线程内部
+    //而对于Web应用，则需要置于更小的System.Web.HttpContext
+
+
+    //GenericContext 用于接口之间数据共享
+
+    /*
+     * GenericContext对象要求
+     * 
+     * Windows应用：保存到每个线程之中，由于采用标准的System.Threading.Thread的CurrentContext属性维护上下文，需要相关对象实现System.Runtime.Remoting.Context.IContextProperty接口比较麻烦，不妨直接使用[ThreadStatic](静态字段的值对每一个线程都是唯一的)属性标记
+     * 
+     * Web应用：保存在System.Web.HttpContext中
+     * 
+     * 自动识别应用模式：由于找不到官方的处理方式，所以需要实现一个独立的Helper方法，以便以后替换该判断逻辑的时候不至于影响上下文内容调度逻辑
+     * 
+     * 
+     */
+
+    //自定义上上下文对象
+    public class GenericContext
+    {
+        /// <summary>
+        /// 用于内部操作，所有的容器类型均为Dictionary<string,object>
+        /// 所以定义一个固定的类型名称
+        /// </summary>
+        class NameBasedDictionary:Dictionary<string,object>
+        {
+
+        }
+
+
+        /// <summary>
+        /// 用于Windows引用的线程上下文成员容器
+        /// </summary>
+        [ThreadStatic]
+        private static NameBasedDictionary threadCache;
+
+        /// <summary>
+        /// 标识当前应用是否为Web应用
+        /// </summary>
+        private static readonly bool isWeb = CheckWhetherIsWeb();
+
+        /// <summary>
+        /// Web应用中Context保存的键值
+        /// </summary>
+        private const string ContextKey = "Web";
+
+
+
+        /// <summary>
+        /// 对于web引用，如果HttpContext对应内容元素内有初始化，则放置一个空容器
+        /// 
+        /// 对于Windows应用，由于threadCache为[ThreadStatic]，则无需该过程(静态字段)
+        /// </summary>
+        public GenericContext()
+        {
+            if(isWeb&&(HttpContext.Current.Items[ContextKey]==null))
+            {
+                HttpContext.Current.Items[ContextKey]=new NameBasedDictionary();
+            }
+        }
+
+        /// <summary>
+        /// 根据上下文成员名称，返回对应内容
+        /// 
+        /// 由于threadCache或HttpContext中的缓冲对象都在构造过程中创建、
+        /// 因此这里没有cache==bull的判断
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public object this[string name]
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(name)) return null;
+                NameBasedDictionary cache = GetCache();
+                if (cache.Count <= 0) return null;
+                object result;
+                if (cache.TryGetValue(name, out result))
+                    return result;
+                else
+                    return null;
+            }
+
+            set
+            {
+                if (string.IsNullOrEmpty(name)) return;
+                NameBasedDictionary cache = GetCache();
+                object temp;
+                if (cache.TryGetValue(name, out temp))
+                    cache[name] = value;
+                else
+                    cache.Add(name, value);
+            }
+
+        }
+
+
+        /// <summary>
+        /// 更具上下文获取相应的上下文缓冲对象
+        /// </summary>
+        /// <returns></returns>
+        private static NameBasedDictionary GetCache()
+        {
+            NameBasedDictionary cache;
+            if (isWeb)
+                cache = (NameBasedDictionary)HttpContext.Current.Items[ContextKey];
+            else
+                cache = threadCache;
+            if (cache == null)
+                cache = new NameBasedDictionary();
+            if (isWeb)
+                HttpContext.Current.Items[ContextKey] = cache;
+            else
+                threadCache = cache;
+            return cache;
+        }
+
+        private static bool CheckWhetherIsWeb()
+        {
+            bool result = false;
+            AppDomain domain = AppDomain.CurrentDomain;
+            try
+            {
+                if (domain.ShadowCopyFiles)
+                    result = (HttpContext.Current.GetType() != null);
+            }
+            catch
+            {
+                new System.Exception();
+            }
+            return result;
+
+        }
+
+
+
+
+
+    }
 
 
 }
