@@ -71,12 +71,14 @@ namespace _00301AbstractFactoryAssemblerMechanism
 
     //5.3.2登记映射关系
     //定义一个类型对于类型映射的字典
+    [Serializable]
     public abstract class TypeMapperBase:Dictionary<Type,Type>
     {
 
     }
 
     //定义一个类型对于保存类型映射字典的映射的字典
+    [Serializable]
     public class TypeMapperDictionary:Dictionary<Type,TypeMapperBase>
     {
 

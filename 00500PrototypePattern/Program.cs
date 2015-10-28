@@ -330,7 +330,7 @@ namespace _00500PrototypePattern
 
     //序列化仅仅是一个手段，我们要做实现克隆的过程，并实现原型模式
 
-    public interface IPrototype
+    public interface IPrototypeNew
     {
         string Name { get; set; }
         IPrototype Clone();
@@ -338,12 +338,12 @@ namespace _00500PrototypePattern
 
 
     [Serializable]
-    public abstract class PrototypeBase:IPrototype
+    public abstract class PrototypeBase:IPrototypeNew
     {
-        public virtual IPrototype Clone()
+        public virtual IPrototypeNew Clone()
         {
             string graph = SerializationHelper.SerializeObjectToString(this);
-            return SerializationHelper.DeserializeStringToObject<IPrototype>(graph);
+            return SerializationHelper.DeserializeStringToObject<IPrototypeNew>(graph);
         }
 
         protected string name;
