@@ -322,6 +322,11 @@ namespace _00500PrototypePattern
      */
 
 
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
@@ -333,7 +338,7 @@ namespace _00500PrototypePattern
     public interface IPrototypeNew
     {
         string Name { get; set; }
-        IPrototype Clone();
+        IPrototypeNew Clone();
     }
 
 

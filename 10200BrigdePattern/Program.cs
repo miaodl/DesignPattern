@@ -178,13 +178,12 @@ namespace _10200BrigdePattern
 
     public class UserController:IDataControl
     {
-        private string data;
+        private string data=null;
         private string tableName;
-        private string dataBase;
+        private string databaseName;
         private IDataCommand command;
         private IDataFormatter formatter;
 
-        private string content;
         private DataSet ds;
 
         public string Content
@@ -210,10 +209,10 @@ namespace _10200BrigdePattern
             get { return tableName; }
             set { tableName = value; }
         }
-        public string DataBase
+        public string DatabaseName
         {
-            get { return dataBase; }
-            set { dataBase = value; }
+            get { return databaseName; }
+            set { databaseName = value; }
         }
 
         public object Data
@@ -228,7 +227,7 @@ namespace _10200BrigdePattern
 
         public void Bind()
         {
-            ds = command.Execute(dataBase, tableName, data);
+            ds = command.Execute(databaseName, tableName, data);
         }
     }
 

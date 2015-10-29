@@ -64,9 +64,9 @@ namespace _10100AdapterPattern
     }
 
     //对象适配器
-    public class Adapter:ITarget
+    public class AdapterObject:ITarget
     {
-        private Adaptee adaptee;//Adaptee 私有对象
+        private Adaptee adaptee=null;//Adaptee 私有对象
 
         public void Request()
         {
