@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10600FlyweightPattern", "10
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10601FlyweightPatternObjectPool", "10601FlyweightPatternObjectPool\10601FlyweightPatternObjectPool.csproj", "{16C1EAAF-63C9-40EE-8E1C-62634A71E674}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10700ProxyPatten", "10700ProxyPatten\10700ProxyPatten.csproj", "{C4205103-195B-49A1-BFE0-A5619BFA9571}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,10 @@ Global
 		{16C1EAAF-63C9-40EE-8E1C-62634A71E674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C1EAAF-63C9-40EE-8E1C-62634A71E674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C1EAAF-63C9-40EE-8E1C-62634A71E674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4205103-195B-49A1-BFE0-A5619BFA9571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4205103-195B-49A1-BFE0-A5619BFA9571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4205103-195B-49A1-BFE0-A5619BFA9571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4205103-195B-49A1-BFE0-A5619BFA9571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
