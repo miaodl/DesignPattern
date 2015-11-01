@@ -1,0 +1,1 @@
+D:\MY_PROJECT\DESIGNPATTERN\CSHARPDESIGNPATTERN\CSHARPDESIGN20151005\20102ChainOfResponsibilityConfigurationRestricted\bin\Debug\20102ChainOfResponsibilityConfigurationRestricted.exe.config
