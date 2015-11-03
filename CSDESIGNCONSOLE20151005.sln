@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20400CommandPattern", "2040
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20401CommandPatternAsync", "20401CommandPatternAsync\20401CommandPatternAsync.csproj", "{0A0A38E3-6FC5-4746-81AA-C3D2E9C0A34C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20500IteratorPattern", "20500IteratorPattern\20500IteratorPattern.csproj", "{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -221,6 +223,10 @@ Global
 		{0A0A38E3-6FC5-4746-81AA-C3D2E9C0A34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A0A38E3-6FC5-4746-81AA-C3D2E9C0A34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A0A38E3-6FC5-4746-81AA-C3D2E9C0A34C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
