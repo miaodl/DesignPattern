@@ -84,7 +84,7 @@ namespace _10600FlyweightPattern
         }
 
 
-        //这个方法相当于对子类开放了，子类对该类以上私有集合的访问权限
+        //这个方法相当于对子类开放了，子类对该父类以上私有集合的访问权限
         public FoodBase AddTaste(string taste)
         {
             tastes.Add(taste);
