@@ -77,6 +77,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20401CommandPatternAsync", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20500IteratorPattern", "20500IteratorPattern\20500IteratorPattern.csproj", "{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20600MediatorPattern", "20600MediatorPattern\20600MediatorPattern.csproj", "{7B27FA3B-3C08-4EAC-BF6F-1F3647E9EFF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20601MediatorPatternDelegateEventBasedLightCoupling", "200601MediatorPatternDelegateEventBasedLightCoupling\20601MediatorPatternDelegateEventBasedLightCoupling.csproj", "{B2323604-0CE6-474C-BFCF-29D560292CE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +231,14 @@ Global
 		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2E901C7-2DBF-4E0D-BBBB-4B734DCE4995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B27FA3B-3C08-4EAC-BF6F-1F3647E9EFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B27FA3B-3C08-4EAC-BF6F-1F3647E9EFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B27FA3B-3C08-4EAC-BF6F-1F3647E9EFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B27FA3B-3C08-4EAC-BF6F-1F3647E9EFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -182,14 +182,14 @@ namespace _20400CommandPattern
 
             }
         }
-        public class Receiver1
+        public class Receiver2
         {
             public void B()
             {
 
             }
         }
-        public class Receiver1
+        public class Receiver3
         {
             public void C()
             {
