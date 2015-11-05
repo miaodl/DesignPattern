@@ -81,6 +81,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20600MediatorPattern", "206
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20601MediatorPatternDelegateEventBasedLightCoupling", "200601MediatorPatternDelegateEventBasedLightCoupling\20601MediatorPatternDelegateEventBasedLightCoupling.csproj", "{B2323604-0CE6-474C-BFCF-29D560292CE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20700MementoPattern", "20700MementoPattern\20700MementoPattern.csproj", "{348921E7-60E9-454D-A94D-994CAA3054CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20701MementoPatternSerializationAndPersistence", "200701MementoPatternSerializationAndPersistence\20701MementoPatternSerializationAndPersistence.csproj", "{C199F255-3DDA-42E1-B3E7-F266696385A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -239,6 +243,14 @@ Global
 		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2323604-0CE6-474C-BFCF-29D560292CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348921E7-60E9-454D-A94D-994CAA3054CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348921E7-60E9-454D-A94D-994CAA3054CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348921E7-60E9-454D-A94D-994CAA3054CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348921E7-60E9-454D-A94D-994CAA3054CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C199F255-3DDA-42E1-B3E7-F266696385A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C199F255-3DDA-42E1-B3E7-F266696385A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C199F255-3DDA-42E1-B3E7-F266696385A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C199F255-3DDA-42E1-B3E7-F266696385A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

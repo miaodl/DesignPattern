@@ -1,0 +1,1 @@
+D:\MY_PROJECT\DESIGNPATTERN\CSHARPDESIGNPATTERN\CSHARPDESIGN20151005\200701MementoPatternSerializationAndPersistence\bin\Debug\200701MementoPatternSerializationAndPersistence.exe.config

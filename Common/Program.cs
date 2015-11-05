@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Web;
+using System.IO;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Soap;
 
 namespace PracticalPattern.CommonTools
 {
@@ -65,8 +69,10 @@ namespace PracticalPattern.CommonTools
     }
 
 
-    //TypeCreator类，portable typeCreator 一个轻便的IObjectBuilder实现
-
+    /// <summary>
+    /// TypeCreator类，portable typeCreator 一个轻便的IObjectBuilder实现
+    /// 或者可以改进该类为从配置文件加载类型信息，并返回实例
+    /// </summary>
     public class TypeCreator:IObjectBuilder
     {
 
@@ -113,7 +119,7 @@ namespace PracticalPattern.CommonTools
 
 
     /// <summary>
-    /// 线程安全的轻量泛型类提供了从一组键到一组值的映射
+    /// 线程安全的轻量泛型类，提供了从一组键到一组值的映射
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
@@ -250,7 +256,9 @@ namespace PracticalPattern.CommonTools
         /// </summary>
         void Load();
     }
-
+    /// <summary>
+    /// 一个集中访问的配置文件解析器
+    /// </summary>
     public static class ConfigurationBroker
     {
 
@@ -367,7 +375,10 @@ namespace PracticalPattern.CommonTools
      * 
      */
 
-    //自定义上上下文对象
+
+    /// <summary>
+    /// 一个自定义上上下文对象
+    /// </summary>
     public class GenericContext
     {
         /// <summary>
@@ -484,9 +495,87 @@ namespace PracticalPattern.CommonTools
 
         }
 
+    }
 
 
+    public enum FormatterType
+    {
+        Soap,
+        Binary
+    }
 
+    /// <summary>
+    /// 一个序列化帮助类
+    /// </summary>
+    public static class SerializationHelper
+    {
+        private const FormatterType DefaultFormatterType = FormatterType.Binary;
+        //按照串行化的编码要求，生成对应的编码器
+        private static IRemotingFormatter GetFormatter(FormatterType formatterType)
+        {
+            switch (formatterType)
+            {
+                case FormatterType.Binary: return new BinaryFormatter();
+                case FormatterType.Soap: return new SoapFormatter();
+            }
+            throw new NotSupportedException();
+        }
+
+        /// <summary>
+        /// 把对象序列化转换成字符串,默认为二进制序列化
+        /// </summary>
+        /// <param name="graph"></param>
+        /// <param name="formatterType"></param>
+        /// <returns></returns>
+
+        public static string SerializeObjectToString(object graph, FormatterType formatterType)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                IRemotingFormatter formatter = GetFormatter(formatterType);
+                formatter.Serialize(memoryStream, graph);
+                Byte[] arrGraph = memoryStream.ToArray();
+                return Convert.ToBase64String(arrGraph);
+            }
+        }
+
+        /// <summary>
+        /// 把对象序列化转换成字符串，默认为二进制序列化
+        /// </summary>
+        /// <param name="graph"></param>
+        /// <returns></returns>
+        public static string SerializeObjectToString(object graph)
+        {
+            return SerializeObjectToString(graph, DefaultFormatterType);
+        }
+
+        /// <summary>
+        /// 反序列化对象，默认从二进制字符串反序列化为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="graph"></param>
+        /// <param name="formatterType"></param>
+        /// <returns></returns>
+        public static T DeserializeStringToObject<T>(string graph, FormatterType formatterType)
+        {
+            Byte[] arrGraph = Convert.FromBase64String(graph);
+            using (MemoryStream memoryStream = new MemoryStream(arrGraph))
+            {
+                IRemotingFormatter formatter = GetFormatter(formatterType);
+                return (T)formatter.Deserialize(memoryStream);
+            }
+        }
+        /// <summary>
+        /// 反序列化对象，默认从二进制字符串反序列化为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="graph"></param>
+        /// <param name="formatterType"></param>
+        /// <returns></returns>
+        public static T DeserializeStringToObject<T>(string graph)
+        {
+            return DeserializeStringToObject<T>(graph, DefaultFormatterType);
+        }
 
     }
 
