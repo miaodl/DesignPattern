@@ -1,0 +1,1 @@
+D:\MY_PROJECT\DESIGNPATTERN\CSHARPDESIGNPATTERN\CSHARPDESIGN20151005\21101VisitorPatternReflectionImplement\bin\Debug\21101VisitorPatternReflectionImplement.exe.config
