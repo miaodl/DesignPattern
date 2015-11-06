@@ -87,6 +87,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20701MementoPatternSerializ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20800ObserverPattern", "20800ObserverPattern\20800ObserverPattern.csproj", "{F4ED910B-8FEF-4850-A7ED-B24936B06785}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20900StatePattern", "20900StatePattern\20900StatePattern.csproj", "{B7865DD4-60F1-4349-9404-F6B901BB5BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21000StragedyPattern", "21000StragedyPattern\21000StragedyPattern.csproj", "{8FF52474-8383-4F6B-AE3C-DB8BE5DAC6EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -257,6 +261,14 @@ Global
 		{F4ED910B-8FEF-4850-A7ED-B24936B06785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4ED910B-8FEF-4850-A7ED-B24936B06785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4ED910B-8FEF-4850-A7ED-B24936B06785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7865DD4-60F1-4349-9404-F6B901BB5BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7865DD4-60F1-4349-9404-F6B901BB5BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7865DD4-60F1-4349-9404-F6B901BB5BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7865DD4-60F1-4349-9404-F6B901BB5BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF52474-8383-4F6B-AE3C-DB8BE5DAC6EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF52474-8383-4F6B-AE3C-DB8BE5DAC6EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF52474-8383-4F6B-AE3C-DB8BE5DAC6EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF52474-8383-4F6B-AE3C-DB8BE5DAC6EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
