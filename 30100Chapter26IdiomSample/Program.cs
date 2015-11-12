@@ -84,7 +84,7 @@ namespace _30100Chapter26IdiomSample
      * Registries----（组合）----IRegistry----(聚合)----interface
      *                                                  IList<T>
      * 
-     * Registries：可以就设计成一个静态类。它应该是进程全局的。它的作用是帮助客户程序作为第一步的盗号，找到某个需要的IRegistry。但它并不是必要的
+     * Registries：可以就设计成一个静态类。它应该是进程全局的。它的作用是帮助客户程序作为第一步的导航，找到某个需要的IRegistry。但它并不是必要的
      */
 
 
